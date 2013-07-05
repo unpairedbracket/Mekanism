@@ -358,35 +358,35 @@ public class EnergyNetwork implements ITickHandler
 			}
 		}
 	}
-	
+
 	@Override
-	public String toString()
-	{
-		return "[EnergyNetwork] " + cables.size() + " cables, " + possibleAcceptors.size() + " acceptors.";
+	public String toString() {
+		return "[EnergyNetwork] " + cables.size() + " cables, "
+				+ possibleAcceptors.size() + " acceptors.";
 	}
-	
+
 	public double getPower() {
-	    return joulesTransmitted * 20;
+		return joulesTransmitted * 20;
 	}
 
-    @Override
-    public void tickStart(EnumSet<TickType> type, Object... tickData) {
-        return;
-    }
+	@Override
+	public void tickStart(EnumSet<TickType> type, Object... tickData) {
+		return;
+	}
 
-    @Override
-    public void tickEnd(EnumSet<TickType> type, Object... tickData) {
-        joulesLastTick = joulesTransmitted;    
-        joulesTransmitted = 0;
-    }
+	@Override
+	public void tickEnd(EnumSet<TickType> type, Object... tickData) {
+		joulesLastTick = joulesTransmitted;
+		joulesTransmitted = 0;
+	}
 
-    @Override
-    public EnumSet<TickType> ticks() {
-        return EnumSet.of(TickType.SERVER);
-    }
+	@Override
+	public EnumSet<TickType> ticks() {
+		return EnumSet.of(TickType.SERVER);
+	}
 
-    @Override
-    public String getLabel() {
-        return toString();
-    }
+	@Override
+	public String getLabel() {
+		return toString();
+	}
 }
