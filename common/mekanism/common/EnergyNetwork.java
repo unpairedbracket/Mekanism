@@ -74,8 +74,8 @@ public class EnergyNetwork implements ITickHandler
 		double energyAvailable = energyToSend;		
 		double sent;		
 		List availableAcceptors = Arrays.asList(getEnergyAcceptors().toArray());
-		Collections.shuffle(availableAcceptors);
 
+		Collections.shuffle(availableAcceptors);
 
 		if(!availableAcceptors.isEmpty())
 		{
@@ -112,7 +112,7 @@ public class EnergyNetwork implements ITickHandler
 				}
 			}
 			sent = energyAvailable - energyToSend;
-	        joulesTransmitted += sent;
+			joulesTransmitted += sent;
 		}
 		
 		return energyToSend;
@@ -361,8 +361,7 @@ public class EnergyNetwork implements ITickHandler
 
 	@Override
 	public String toString() {
-		return "[EnergyNetwork] " + cables.size() + " cables, "
-				+ possibleAcceptors.size() + " acceptors.";
+		return "[EnergyNetwork] " + cables.size() + " cables, " + possibleAcceptors.size() + " acceptors.";
 	}
 
 	public double getPower() {
